@@ -32,3 +32,30 @@ day_name = int(input(f"{RED}Enter day (1-31): {RESET}"))
 while day_name < 1 or day_name > 31:
     print("Incorrect, please try again!")
     day_name = int(input(f"{RED}Enter day (1-31): {RESET}"))
+
+
+# Custom function to print calendar with highlighted date
+
+
+def print_calendar_with_highlight(year, month, day):
+    cal = calendar.monthcalendar(year, month)
+    print(calendar.month_name[month], year)
+    print("Mo | Tu | We| Th| Fr| Sa| Su|")
+
+    for week in cal:
+        for i, date in enumerate(week):
+            if date == day:
+                print(f"[{date:2}]", end=" ")
+            elif date == 0:
+                print("   ", end=" ")
+            else:
+                print(f" {date:2}", end=" ")
+        print()
+
+
+# Use the custom function to print the calendar with the highlighted date
+print_calendar_with_highlight(year_name, month_name, day_name)
+
+# Display the selected date
+print(
+    f"{RED}Your selected date:{RESET} {day_name} {calendar.month_name[month_name]} {year_name}")
