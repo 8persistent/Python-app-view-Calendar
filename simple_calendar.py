@@ -19,3 +19,16 @@ year_name = int(input(f"{RED}Enter year: {RESET}"))
 while year_name < 1900 or year_name > 2100:
     print("Incorrect, please try again!")
     year_name = int(input(f"{RED}Enter year: {RESET}"))
+
+
+# Input month with validation
+month_name = int(input(f"{RED}Enter month (1-12): {RESET}"))
+while month_name < 1 or month_name > 12:
+    print("Incorrect, please try again!")
+    month_name = int(input(f"{RED}Enter month (1-12): {RESET}"))
+
+# Input day with validation
+day_name = int(input(f"{RED}Enter day (1-31): {RESET}"))
+while day_name < 1 or day_name > 31:
+    print("Incorrect, please try again!")
+    day_name = int(input(f"{RED}Enter day (1-31): {RESET}"))
